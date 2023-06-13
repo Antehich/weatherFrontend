@@ -1,38 +1,137 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Bagel Fat One', cursive;
+  font-size: medium;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.app{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainBox{
+  height: 500px;
+  width: 900px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.leftPanel{
+  height: 500px;
+  width: 250px;
+  border: solid 3px #fd2c36;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.rightPanel{
+  width: 650px;
+  height: 500px;
+  border: solid 3px #2c3dfd;
+  border-radius: 10px;
+}
+
+.searchRow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 25px;
+  padding: 5px 0;
+  border-radius: 5px;
+  border: solid 2px black;
+}
+
+.locationInput{
+  height: 20px;
+  width: 70%;
+  display: flex;
   text-align: center;
+  border: dashed 3px seagreen;
+  border-radius: 5px;
+  cursor: text;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.homeButton{
+  border: dashed 2px seagreen;
+  border-radius: 12px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dadada;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.currentWeather{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.currentWeatherIcon{
+  height: 100%;
+  border-radius: 5px;
+  border: solid 2px black;
+}
+
+.currentTemperature{
+  font-size: 84px;
+  border-radius: 5px;
+  border: solid 2px black;
+}
+
+.dayInfo{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 5px;
+  border: solid 2px black;
+}
+
+.currentParameters{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px black;
+}
+
+.currentDayOfWeek{
+  text-transform: uppercase;
+}
+
+.titleIcon{
+  height: 15px;
+}
+
+.parameterValue{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.parameterCol{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: flex-start;
+  gap: 10px;
 }
