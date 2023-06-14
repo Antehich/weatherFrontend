@@ -13,6 +13,7 @@ function App() {
 
 
 	useEffect(() => {
+		setLoading(true)
 		fetch(`http://localhost:5000/location`, {
 			method: 'POST',
 			body: JSON.stringify({'city': city}),
@@ -26,7 +27,7 @@ function App() {
 			body: JSON.stringify({'id': location.id}),
 			headers: {'Content-Type': 'application/json'}
 		}).then(response => response.json()).then(forecast => setCurrentWeather(forecast))
-	}, [location])
+	}, [location.id])
 
     useEffect(() => {
         fetch(`http://localhost:5000/future`, {
@@ -34,13 +35,13 @@ function App() {
             body: JSON.stringify({'id': location.id}),
             headers: {'Content-Type': 'application/json'}
         }).then(response => response.json()).then(forecast => setFutureWeather(forecast)).then(() => setLoading(false))
-    }, [currentWeather])
+    }, [currentWeather, location.id])
 
 	if (loading === false){
 		return (
 			<div className='mainBox'>
 				<LeftPanel callback={setCity} data={currentWeather}/>
-				<RightPanel data={currentWeather}/>
+				<RightPanel data={futureWeather}/>
 			</div>);
 	}
 	else{

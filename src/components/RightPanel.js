@@ -1,10 +1,10 @@
 import React from 'react';
-import DayCard from "./DayCard";
+import DaysRow from "./DaysRow";
 
 function RightPanel({data}) {
     return (
         <div className='rightPanel'>
-            <DayCard data={data}/>
+            <DaysRow days={data}/>
         </div>
     );
 }

@@ -18,15 +18,15 @@ function LeftPanel({callback, data}) {
     return (
         <div className="leftPanel">
             <div className="searchRow">
-                <input type="text" id="city" className="locationInput" placeholder="Pos input📍"/>
-                <button className="homeButton"><span>⬅</span></button>
+                <input type="text" id="cityInput" className="locationInput" placeholder="Pos input📍"/>
+                <button className="homeButton" onClick={() => callback(document.getElementById('cityInput').value)}><span>🔍</span></button>
             </div>
             <div className={"currentWeather"}>
                 <img className={"currentWeatherIcon"} alt={"123"} src={`https://developer.foreca.com/static/images/symbols/${data.symbol}.png`}/>
                 <p className={"currentTemperature"}>{data.temperature}°</p>
                 <div className={"dayInfo"}>
-                    <p className={"currentDate"}>{parseTimeToStr(data.time)}</p>
-                    <p className={"currentTime"}>{parseDateToStr(data.time)}</p>
+                    <p className={"currentDayInfoText"}>{parseTimeToStr(data.time)}</p>
+                    <p className={"currentDayInfoText"}>{parseDateToStr(data.time)}</p>
                 </div>
                 <div className={"currentParameters"}>
                     <div className={"parameterCol"}>
