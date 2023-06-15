@@ -44,18 +44,31 @@ function App() {
 				<RightPanel data={futureWeather}/>
 			</div>);
 	}
-	else{
-		return(<BallTriangle
-			height={100}
-			width={100}
-			radius={5}
-			color="#4fa94d"
-			ariaLabel="ball-triangle-loading"
-			wrapperClass={{}}
-			wrapperStyle=""
-			visible={true}
-		/>)
+	else
+		if (city === '' || location.id === 'Not found'){
+			return(
+				<div>
+					<div className="searchRow">
+						<input type="text" id="cityInput" className="locationInput" placeholder="Pos input📍"/>
+						<button className="homeButton" onClick={() => {setCity(document.getElementById('cityInput').value)}}><span>🔍</span></button>
+					</div>
+					<div style={{display: 'flex', justifyContent: 'center', fontSize: '24px'}}>I dont know this place</div>
+				</div>
+
+			);
 	}
+		else{
+			return(<BallTriangle
+				height={100}
+				width={100}
+				radius={5}
+				color="#4fa94d"
+				ariaLabel="ball-triangle-loading"
+				wrapperClass={{}}
+				wrapperStyle=""
+				visible={true}
+			/>)
+		}
 }
 
 export default App;
